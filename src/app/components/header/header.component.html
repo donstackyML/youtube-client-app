@@ -1,1 +1,29 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header__left-part"></div>
+  <div class="header__center-part">
+    <img
+      src="../../../assets/image/youtube.svg"
+      width="80px"
+      alt="youtube logo"
+      class="header__logo"
+    />
+    <prizm-input-layout label="Заголовок" class="header__search-input" size="m">
+      <input prizmInput />
+    </prizm-input-layout>
+    <button prizmButton class="header__search-button" size="m">
+      Left Icon
+    </button>
+    <button
+      prizmButton
+      class="header__filter-button"
+      size="m"
+      [icon]="'user-card'"
+    ></button>
+  </div>
+  <div class="header__right-part">
+    <span class="header__profile-name">Your Name</span>
+    <button prizmButton class="header__profile-button" size="m">
+      Left Icon
+    </button>
+  </div>
+</div>
