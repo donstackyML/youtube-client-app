@@ -1,29 +1,54 @@
-<div class="header">
-  <div class="header__left-part"></div>
-  <div class="header__center-part">
-    <img
-      src="../../../assets/image/youtube.svg"
-      width="80px"
-      alt="youtube logo"
-      class="header__logo"
-    />
-    <prizm-input-layout label="Заголовок" class="header__search-input" size="m">
-      <input prizmInput />
-    </prizm-input-layout>
-    <button prizmButton class="header__search-button" size="m">
-      Left Icon
-    </button>
-    <button
-      prizmButton
-      class="header__filter-button"
-      size="m"
-      [icon]="'user-card'"
-    ></button>
+<div
+  [ngClass]="{
+    header__wrapper: true,
+    'header__wrapper--sorting-visible': showSortingField
+  }"
+>
+  <div class="header">
+    <div class="header__left-part"></div>
+    <div class="header__center-part">
+      <img
+        src="../../../assets/image/youtube.svg"
+        width="80px"
+        alt="youtube logo"
+        class="header__logo"
+      />
+      <prizm-input-layout class="header__search-input" size="m">
+        <input prizmInput />
+      </prizm-input-layout>
+      <button prizmButton class="header__search-button" size="m">Search</button>
+      <button
+        prizmButton
+        class="header__filter-button"
+        size="m"
+        [icon]="'filter'"
+        (click)="toggleSortingField()"
+      ></button>
+    </div>
+    <div class="header__right-part">
+      <span class="header__profile-name">Your Name</span>
+      <button
+        prizmButton
+        class="header__profile-button"
+        size="m"
+        icon="user"
+      ></button>
+    </div>
   </div>
-  <div class="header__right-part">
-    <span class="header__profile-name">Your Name</span>
-    <button prizmButton class="header__profile-button" size="m">
-      Left Icon
-    </button>
+  <div
+    [ngClass]="{
+      header__sorting: true,
+      'header__sorting--visible': showSortingField
+    }"
+  >
+    <span>Sorting by:</span>
+    <span class="header__sort-handle">date</span>
+    <span class="header__sort-handle">count of views</span>
+    <label class="header__filter">
+      by word or sentance
+      <prizm-input-layout class="header__filter-input" size="s" [outer]="true">
+        <input prizmInput />
+      </prizm-input-layout>
+    </label>
   </div>
 </div>

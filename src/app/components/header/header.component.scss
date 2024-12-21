@@ -2,8 +2,21 @@
   display: flex;
   max-width: 1440px;
   padding: 10px 15px;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+
+  &__wrapper {
+    width: 100%;
+    background-color: #e2efef;
+    height: 80px;
+    transition: height 0.3s;
+    overflow: hidden;
+
+    &--sorting-visible {
+      height: 144px;
+    }
+  }
 }
 
 .header__center-part {
@@ -11,14 +24,6 @@
   align-items: center;
   gap: 10px;
 }
-
-.header__logo {}
-
-.header__search-input {}
-
-.header__search-button {}
-
-.header__filter-button {}
 
 .header__right-part {
   display: flex;
@@ -31,6 +36,33 @@
   width: 200px;
 }
 
-.header__profile-name {}
+.header__sorting {
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  padding: 10px 15px;
+  margin: 0 auto;
+  gap: 20px;
+  visibility: hidden;
+  transition: visibility 0.3s;
 
-.header__profile-button {}
+  &--visible {
+    visibility: visible;
+  }
+}
+
+.header__sort-handle {
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: #436cee;
+    transition: 0.3s;
+  }
+}
+
+.header__filter {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap
+}
